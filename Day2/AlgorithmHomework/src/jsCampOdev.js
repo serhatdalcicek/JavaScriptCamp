@@ -1,58 +1,64 @@
 // 1- Ödev İstediğin kadar sayı ve çıktıları Asal olup olmadığını yazdırma
 //prime fonksiyonu ile asal sayı bulma
+//const = oluşturulan bir değişkene daha sonrasında tekrar değer ataması yapılamaz demektir.
 
-let findPrime = (...numbers) => {
-   for (let i = 0; i < numbers.length; i++) {
-      let newNumber = numbers[i]
-      let sayac = 0
-      for (let j = 0; j < newNumber; j++) {
-         if  (newNumber % j == 0){
-            sayac++
-         }     
-      } 
-      if (newNumber == 2) {
-         console.log(newNumber + " : sayısı asal sayı değildir dostum")
-      } 
-      else if (sayac == 0) {
-         console.log(newNumber + " : sayısı asal sayıdır dostum")
-      }  
-      else {
-         console.log(newNumber + " : sayısı asal sayı değildir dostum")
-      }  
+const findPrime = (...num) => {
+   for (let i = 0; i<num.length; i++) {
+     let findPrime = true;
+     if (num[i] === 1 || num[i] === 2)
+       console.log(num[i] + " : sayısı asal sayıdır :))");
+     else {
+        for (let j = 2; j < num[i]; j++) {
+          if (num[i] % j === 0) {
+            findPrime = false;
+            break;
+          }
+        }
+ 
+       if (findPrime) {
+         console.log(num[i] +  " : sayısı asal sayıdır :))");
+       } else {
+         console.log(num[i] +  " : sayısı asal sayı değildir  :((");
+       }
+     }
    }
-}
-findPrime(2,4,7,5,9,12,67,33,156,678,234,123)
+ };
+
+ findPrime(1,2,45,67,54,34,78,45,87,234,645)
+
 console.log("---------------------------")
-//arkadaş sayıları bulma
-let findFriend = (num1, num2) => {
-   let sumNum1 = 0, sumNum2 = 0
-   for (let i = 1; i < num1; i++) {
-       if (num1 % i == 0) {
-           sumNum1 += i
-       }
-   }
-   for (let i = 1; i < num2; i++) {
-       if (num2 % i == 0) {
-           sumNum2 += i
-       }
-   }
 
-   if (sumNum1 == num2 && sumNum2 == num1) {
-       console.log(num1 + " ve " + num2 + " : sayısı arkadaş sayılardır")
-   }
-   else {
-       console.log(num1 + " ve " + num2 + " : sayısı arkadaş sayı değildir :/ ")
-   }
+
+// 2 - arkadaş sayıları bulma
+
+let number1 = 485
+let number2 = 284
+
+let total1 = 0
+let total2 = 0
+
+for (let i = 0; i < number1; i++) {
+  if(number1 % i == 0){ //number1 i ye tam bölünüyorsa demektir
+     total1 = total1 +i;
+  }   
+}
+for (let i = 0; i < number2; i++) {
+   if(number2 % i == 0){
+      total2 = total2 +i;
+   }   
+}
+if (number1 == total2 && number2 == total1) { //&& iki koşul doğru ise kullanılır
+   console.log("Bu iki sayı arkadaş sayıdır")
+}else{
+   console.log("Bu iki sayı arkadaş sayı değildir.")
 }
 
-findFriend(220, 284)
+console.log("---------------------------")
 
-console.log("------------------")
+// 3  -   1000 e kadar tüm mükemmel sayıları bulma
+let findPerfectNumber = (perfectNumber) => {
 
-//1000 e kadar tüm mükemmel sayıları bulma
-let findPerfectNumber = param => {
-
-   for (let j = 1; j < param; j++) {
+   for (let j = 1; j < perfectNumber; j++) {
        let number = j
        let toplam = 0
        for (let i = 1; i < number; i++) {
@@ -67,19 +73,19 @@ let findPerfectNumber = param => {
 }
 findPerfectNumber(1000)
 
-console.log("---------------")
+console.log("---------------------------")
 
-//1000 e kadar asal sayıları bulma
-let allNumbers = () => {
+//4 - 1000 e kadar asal sayıları bulma
+let allNumbers = (num) => {
    for (let i = 0; i < 1000; i++) {
        let num = i
-       let sayac = 0
+       let total = 0
        for (let j = 2; j < num; j++) {
            if (num % j == 0) {
-               sayac++
+            total++
            }
        }
-       if (sayac == 0) {
+       if (total == 0) {
            console.log(num + " : sayısı  asal sayıdır :))" )
        }
        else{
@@ -88,3 +94,4 @@ let allNumbers = () => {
    }
 }
 allNumbers()
+console.log("---------------------------")
