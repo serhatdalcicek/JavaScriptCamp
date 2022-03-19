@@ -31,8 +31,8 @@ console.log("---------------------------")
 
 // 2 - arkadaş sayıları bulma
 
-let number1 = 485
-let number2 = 284
+const number1 = 220
+const number2 = 284
 
 let total1 = 0
 let total2 = 0
