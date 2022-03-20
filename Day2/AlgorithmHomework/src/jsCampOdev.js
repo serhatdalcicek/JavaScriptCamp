@@ -5,8 +5,8 @@
 const findPrime = (...num) => {
    for (let i = 0; i<num.length; i++) {
      let findPrime = true;
-     if (num[i] === 1 || num[i] === 2)
-       console.log(num[i] + " : sayısı asal sayıdır :))");
+     if (num[i] === 1 )
+       console.log(num[i] + " : sayısı asal sayı değildir :((");
      else {
         for (let j = 2; j < num[i]; j++) {
           if (num[i] % j === 0) {
@@ -24,7 +24,7 @@ const findPrime = (...num) => {
    }
  };
 
- findPrime(1,2,45,67,54,34,78,45,87,234,645)
+ findPrime(1,2,45,67,54,23,78,45,87,234,645)
 
 console.log("---------------------------")
 
